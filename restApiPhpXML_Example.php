@@ -57,19 +57,18 @@
 	  else 
 	  {
 	 	  $result=mysql_query("select *from tbl_user where username='$username'");
-	      while($row=mysql_fetch_array($result))
-				{
-						 $xml = "<?xml version='1.0' encoding='utf-8' ?>";
-						 $xml .= "<ROOT>";	
-						 $xml .= "<USER_ID><![CDATA[{$row['userId']}]]></USER_ID>";
-				 	     $xml .= "<FIRST_NAME><![CDATA[{$row['firstName']}]]></FIRST_NAME>";								 
-						 $xml .= "<LAST_NAME><![CDATA[{$row['lastName']}]]></LAST_NAME>";
-						 $xml .= "<USER_MOOD><![CDATA[{$row['userMood']}]]></USER_MOOD>";
-						 $xml .= "<EMAIL><![CDATA[{$row['email']}]]></EMAIL>";
-						 $xml .= "<CONTACT><![CDATA[{$row['contact']}]]></CONTACT>";					        
-						 $xml .= "</ROOT>";	 	
-						 echo $xml;							
-			   }   
+	     	  while($row=mysql_fetch_array($result)){
+			 $xml = "<?xml version='1.0' encoding='utf-8' ?>";
+			 $xml .= "<ROOT>";	
+			 $xml .= "<USER_ID><![CDATA[{$row['userId']}]]></USER_ID>";
+			 $xml .= "<FIRST_NAME><![CDATA[{$row['firstName']}]]></FIRST_NAME>";								 
+			 $xml .= "<LAST_NAME><![CDATA[{$row['lastName']}]]></LAST_NAME>";
+			 $xml .= "<USER_MOOD><![CDATA[{$row['userMood']}]]></USER_MOOD>";
+			 $xml .= "<EMAIL><![CDATA[{$row['email']}]]></EMAIL>";
+			 $xml .= "<CONTACT><![CDATA[{$row['contact']}]]></CONTACT>";					        
+			 $xml .= "</ROOT>";	 	
+			 echo $xml;							
+		}   
 	  }
 	 
 
